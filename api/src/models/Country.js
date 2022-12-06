@@ -4,6 +4,14 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('country', {
+    id: {
+      type: DataTypes.STRING(3),
+      allowNull: false,
+      primaryKey: true,
+      validate: {
+        len: [3]
+      }
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -14,7 +22,8 @@ module.exports = (sequelize) => {
     },
     capital: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: "Without capital"
     },
     subregion: {
       type: DataTypes.STRING,
@@ -23,7 +32,13 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT
     },
     population: {
-      type: DataTypes.INTEGER.UNSIGNED
+      type: DataTypes.INTEGER
+    },
+    flag: {
+      type: DataTypes.STRING,
+      validate: {
+        isUrl: true
+      }
     }
-  });
+  }, {timestamps: false});
 };
