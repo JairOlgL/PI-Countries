@@ -19,7 +19,7 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const loader = require("./src/countriesLoader.js")
+const loader = require("./src/controllers/countriesLoader.js")
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {

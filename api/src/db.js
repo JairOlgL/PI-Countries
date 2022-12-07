@@ -34,7 +34,7 @@ const { Country, Activity } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-
+const activities_countries = sequelize.define('activities_countries', {}, { timestamps: false });
 Country.belongsToMany(Activity, {through: "activities_countries"});
 Activity.belongsToMany(Country, {through: "activities_countries"}); 
 

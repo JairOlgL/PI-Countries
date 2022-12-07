@@ -1,11 +1,10 @@
-const {Country} = require('./db.js');
+const {Country} = require('../db.js');
 
 const loader = async() => {
-    const countries = [];
     await fetch('https://restcountries.com/v3/all')
     .then(data => data.json())
     .then(data => data.map(e => {
-        countries.push({
+        Country.create({
             id: e.cca3,
             name: e.name.common,
             continent: e.region,
@@ -16,9 +15,6 @@ const loader = async() => {
             flag: e.flags[1] || e.flags[0]
         })
     }))
-    countries.map(e => {
-        Country.create(e);
-    })
 }
 
 module.exports = loader;
