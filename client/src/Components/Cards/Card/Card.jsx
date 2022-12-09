@@ -1,12 +1,14 @@
 import './Card.css'
+import { NavLink } from 'react-router-dom';
 
-const Card = ({name, region, flag}) => {
+const Card = ({name, continent, flag, id}) => {
     return(
         <div className="Card">
             <img src={flag} alt="Cuntry Flag" />
             <h2>{`${name},`}</h2>
-            <h3>{region}</h3>
-            <button >Details</button>
+            <h3>{continent}</h3>
+            
+            <NavLink exact to={`/countries/${id}`}><button>Details</button></NavLink>
         </div>
     )
 }

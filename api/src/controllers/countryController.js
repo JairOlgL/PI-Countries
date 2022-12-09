@@ -4,12 +4,12 @@ const {Op} = require('sequelize');
 const getCountries = async(name) => {
     console.log('Enter')
     const countriesDB = name ? await Country.findAll({
-        attributes: ['id', 'name', 'region', 'flag'],
+        attributes: ['id', 'name', 'continent', 'flag'],
         where: {
             name: {[Op.iLike]: `%${name}%`}
         }
     }) : await Country.findAll({
-        attributes: ['id', 'name', 'region', 'flag']
+        attributes: ['id', 'name', 'continent', 'flag']
     })
     if(!countriesDB.length) throw `No se ha encontrado un país con el nombre ${name}`
     else return countriesDB;

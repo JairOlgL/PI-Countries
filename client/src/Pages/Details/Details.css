@@ -1,0 +1,13 @@
+.Details{
+    padding: 10px;
+    width: 80%;
+}
+.Details img{
+    float: right;
+}
+.Details h1{
+    font-size: 3rem;
+}
+.Details h3{
+    color: #e6ddb4;
+}

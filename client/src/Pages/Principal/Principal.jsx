@@ -17,15 +17,17 @@ const Principal = () => {
     else document.querySelectorAll('.pageButton').forEach(e => e.hidden = false);
     return(
         <div>
-            <SearchBar setter={setCountries} />
+            <SearchBar setter={setCountries} page={setPage} />
             {countries.error ? <h1>{countries.error}</h1> : <Cards countries={countries.slice(page, page+9)} />}
-            <button className='pageButton' onClick={() => {
-                if(countries.slice(page-9, page).length === 9) setPage(page-9)
-            }}>{"<"}</button>
-            <h1 style={{display: "inline", margin: "0 15px"}}>{(page+9)/9}</h1>
-            <button className='pageButton' onClick={() => {
-                if(countries.slice(page+9, page+18).length > 0) setPage(page+9)
-            }}>{">"}</button>
+            <div className='pageButton'>
+                <button onClick={() => {
+                    if(countries.slice(page-9, page).length === 9) setPage(page-9)
+                }}>{"<"}</button>
+                <h1 style={{display: "inline", margin: "0 15px"}}>{(page+9)/9}</h1>
+                <button onClick={() => {
+                    if(countries.slice(page+9, page+18).length > 0) setPage(page+9)
+                }}>{">"}</button>
+            </div>
         </div>
     )
 }

@@ -3,3 +3,9 @@
     height: 4rem;
     background-color: #312519;
 }
+a{
+    text-decoration: none;
+    color: #c9a163;
+    font-weight: 900;
+    margin: 0 1rem;
+}

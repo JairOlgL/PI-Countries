@@ -1,6 +1,6 @@
 import './SearchBar.css'
 
-const SearchBar = ({setter}) => {
+const SearchBar = ({setter, page}) => {
     return(
         <div className='Search'>
             <input type="text" name="" id="" />
@@ -9,7 +9,7 @@ const SearchBar = ({setter}) => {
                 setter(await fetch(`http://localhost:3001/countries?name=${input}`)
                 .then(data => data.json())
                 .then(data => {
-                    
+                    page(0)
                     return data;
                 }))
             }}>Search</button>
