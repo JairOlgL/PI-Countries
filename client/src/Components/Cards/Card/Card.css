@@ -1,0 +1,12 @@
+.Card{
+    background-color: #342c22;
+    margin: 2rem 2rem .5rem 2rem;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 233px;
+}
+.Card img{
+    float: left;
+    width: 60%;
+    height: 100%;
+}

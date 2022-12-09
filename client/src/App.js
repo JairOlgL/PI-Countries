@@ -1,9 +1,12 @@
 import './App.css';
+import NavBar from './Components/NavBar/NavBar';
+import Principal from './Pages/Principal/Principal';
 
 function App() {
   return (
     <div className="App">
-      <h1>Henry Countries</h1>
+      <NavBar />
+      <Principal />
     </div>
   );
 }

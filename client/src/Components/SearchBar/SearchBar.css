@@ -1,0 +1,10 @@
+.Search {
+    margin-top: 20px;
+}
+.Search input{
+    padding: .75rem;
+    border-radius: 15px 0px 0px 15px;
+}
+.Search button{
+    border-radius: 0px 15px 15px 0px;
+}
