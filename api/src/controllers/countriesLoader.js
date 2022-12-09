@@ -9,7 +9,7 @@ const loader = async() => {
             name: e.name.common,
             continent: e.region,
             capital: e.capital ? e.capital[0] : undefined,
-            subregion: e.subregion || e.region,
+            region: e.region || e.subregion,
             area: e.area,
             population: e.population,
             flag: e.flags[1] || e.flags[0]
